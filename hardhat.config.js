@@ -10,6 +10,7 @@ module.exports = {
         hardhat: {},
         goerli: {
             url: 'https://rpc.ankr.com/eth_goerli',
+            // https://rpc.ankr.com/eth_goerli
             accounts: [`0x${PRIVATE_KEY}`]
         }
     },
