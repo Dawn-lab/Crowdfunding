@@ -1,7 +1,12 @@
 {
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "ethers": "^5.4.0",
     "hardhat": "^2.12.7"
+  },
+  "scripts": {
+    "deploy:local": "npx hardhat run scripts/deploy.js --network local"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.2.2"

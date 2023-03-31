@@ -21,7 +21,6 @@ contract CrowdFunding {
     //Create campaign function
 
     function createCampaign(
-        address _owner,
         string memory _title,
         string memory _description,
         uint256 _target,
@@ -35,7 +34,7 @@ contract CrowdFunding {
             "The deadline should be a date in the future."
         );
 
-        campaign.owner = _owner;
+        campaign.owner = msg.sender;
         campaign.title = _title;
         campaign.description = _description;
         campaign.target = _target;
@@ -63,11 +62,9 @@ contract CrowdFunding {
         }
     }
 
-    function getDonors(uint256 _id)
-        public
-        view
-        returns (address[] memory, uint256[] memory)
-    {
+    function getDonors(
+        uint256 _id
+    ) public view returns (address[] memory, uint256[] memory) {
         return (campaigns[_id].donors, campaigns[_id].donations);
     }
 
